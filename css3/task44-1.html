@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task44-1</title>
+	<style type="text/css">
+		@-webkit-keyframes move{
+			0%{
+				transform: translateY(0px);
+			}
+			25%{
+				transform: translateY(275px);
+				background: red;
+				width: 25px;
+				height: 25px;
+			}
+			50%{
+				transform: translate(270px,270px);
+				background: orange;
+				width: 30px;
+				height: 30px;
+			}
+			75%{
+				transform: translateX(265px);
+				background: blue;
+				width: 35px;
+				height: 35px;
+			}
+			100%{
+				transform: translate(0);
+				width: 40px;
+				height: 40px;
+			}
+		}
+		@keyframes move{
+			0%{
+				transform: translateY(0px);
+			}
+			25%{
+				transform: translateY(275px);
+				background: red;
+				width: 25px;
+				height: 25px;
+			}
+			50%{
+				transform: translate(270px,270px);
+				background: orange;
+				width: 30px;
+				height: 30px;
+			}
+			75%{
+				transform: translateX(265px);
+				background: blue;
+				width: 35px;
+				height: 35px;
+			}
+			100%{
+				transform: translate(0);
+				width: 40px;
+				height: 40px;
+			}
+		}
+	
+		.box{
+			width: 100px;
+			height: 100px;
+			background: orange;
+			margin: 20px;
+			float: left;
+		}
+		.circular{
+			border-radius: 50%;
+		}
+		.semicircle{
+			width:50px;
+			border-radius: 50px 0 0 50px;
+		}
+		.radius{
+			border-radius: 10px;
+		}
+		.shadow{
+			box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.3);
+		}
+		.inset{
+			box-shadow: 1px 1px 3px 3px rgba(0,0,0,0.3) inset;
+		}
+		.skew{
+			transform: skew(10deg);
+		}
+		.bigger{
+			transform: scale(1.5);
+		}
+		.smaller{
+			transform: scale(0.7);
+		}
+		.translate{
+			transform: translateY(-80px);
+		}
+		.rotate{
+			transform: rotate(30deg);
+		}
+		.wrap{
+			background: none;
+			transform: rotateX(30deg) rotateY(30deg) ;
+			transform-style: preserve-3d;
+			perspective: 1000px;
+		}
+		.wrap:hover{
+			transform: rotateX(80deg) rotateY(80deg) ;
+			transition: all 2s;
+		}
+
+		.wrap .box{
+			position: absolute;
+			opacity: 0.8;
+			margin:0;
+		}
+		.transform3d{
+			background: blue;
+		}
+		.rotate3d{
+			background: pink;
+			transform: rotateY(80deg);
+		}
+		.linear{
+			width: 200px;
+			background-image: linear-gradient(to top left,yellow,blue,red,pink)
+		}
+		.radial{
+			background-image: radial-gradient(green,orange,red)
+		}
+		.transition:hover{
+			background: pink;
+			width: 300px;
+			transition: all 1s;
+		}
+		.ct{
+			width: 300px;
+			height: 300px;
+			border:1px solid ;
+		}
+		.ball{
+			width: 20px;
+			height: 20px;
+			background: #000;
+			border-radius: 50%;
+			animation: move 10s ease-out infinite;
+			-webkit-animation: move 10s ease-out infinite;
+		}
+	</style>
+</head>
+<body>
+	<fieldset>
+		<legend>1.圆角、圆形</legend>
+		<div class="box circular"></div>
+		<div class="box semicircle"></div>
+		<div class="box radius"></div>
+	</fieldset>
+
+	<fieldset>
+		<legend>2.div阴影</legend>
+		<div class="box shadow"></div>
+		<div class="box inset"></div>
+	</fieldset>
+
+	<fieldset >
+		<legend>3.2D 转换：放大、缩小、偏移、旋转</legend>
+		<div class="box skew"></div>
+		<div class="box bigger">放大</div>
+		<div class="box smaller">缩小</div>
+		<div class="box translate">向上偏移</div>
+		<div class="box rotate">旋转</div>
+	</fieldset>
+
+	<fieldset >
+		<legend>4.3D 转换：移动、旋转</legend>
+		<div class="box wrap">
+			<div class="box transform3d"></div>
+			<div class="box rotate3d"></div>
+		</div>
+		
+	</fieldset>
+
+	<fieldset >
+		<legend>5.背景色渐变</legend>
+		<div class="box linear"></div>
+		<div class="box radial circular"></div>
+	</fieldset>
+
+	<fieldset >
+		<legend>6.过渡效果</legend>
+		<div class="box transition" >hover</div>
+	</fieldset>
+
+	<fieldset >
+		<legend>7.动画</legend>
+		<div class="ct">
+			<div class="ball"></div>
+		</div>
+	</fieldset>
+
+
+
+	<script type="text/javascript" src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+	
+</body>
+</html>

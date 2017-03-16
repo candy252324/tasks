@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>task43</title>
+	<style type="text/css">
+		ul,li{
+			margin:0;
+			padding: 0;
+		}
+		li{
+			list-style: none;
+
+		}
+		.ct{
+			border:1px solid #ccc;
+			min-height: 50px;
+		}
+		.ct:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		.ct li{
+			float: left;
+			margin:10px;
+			padding:10px;
+			border:1px dashed #ccc;
+			background: #eee;
+		}
+	</style>
+</head>
+<body>
+	<h3>全部</h3>
+	<ul class="ct ct1">
+		<li class="car" draggable="true">汽车</li>
+		<li class="Military" draggable="true">军事</li>
+		<li class="zhejiang" draggable="true">浙江</li>
+		<li class="science" draggable="true">科技</li>
+		<li class="mobile" draggable="true">手机</li>
+		<li class="universe" draggable="true">宇宙</li>
+		<li class="fun" draggable="true">娱乐</li>
+		<li class="beauty" draggable="true">美妆</li>
+	</ul>
+	<h3>订阅</h3>
+	<ul class="ct ct2">
+		
+	</ul>
+	<script type="text/javascript">
+		var ct1 = document.querySelector('.ct1'),
+       	ct2 = document.querySelector('.ct2'),
+       	items = document.querySelectorAll('.ct li');
+    
+	    for(var i=0; i<items.length; i++){
+	      items[i].ondragstart=function(e){
+	        e.dataTransfer.setData("class",e.target.className);
+	      }
+	    }
+	    
+	    ct1.ondragover = ondragover;
+	    ct2.ondragover = ondragover;
+	    
+	    ct1.ondrop = ondrop;
+	    ct2.ondrop = ondrop;
+
+	    function ondragover(e){
+	      e.preventDefault();
+	    }
+	    
+	    function ondrop(e){
+	      e.preventDefault();
+	      var cls=e.dataTransfer.getData("class");
+	      e.target.appendChild(document.getElementsByClassName(cls)[0]);
+	    }
+	</script>
+</body>
+</html>
