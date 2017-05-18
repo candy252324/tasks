@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>横向滚动条</title>
+	<style>
+		#container
+{
+    width: 800px;
+    margin: 0 auto;
+    height: 40px;
+    background-color: #ccc;
+    overflow-x: scroll;
+}
+ 
+#subcontainer
+{
+    width: 8000px;  /*随意些一个比较大的值*/
+    /*height:300px;  不能写高度  不能清除浮动*/
+}
+ 
+.banner
+{
+    margin-left: 5px;
+    width: 300px;
+    height: 20px;
+    background-color: Fuchsia;
+    float: left;
+}
+	</style>
+</head>
+<body>
+	<form id="form1" runat="server">
+    <div id="container">
+        <div id="subcontainer">
+            <div class="banner">
+                1
+            </div>
+            <div class="banner">
+                2
+            </div>
+            <div class="banner">
+                3
+            </div>
+            <div class="banner">
+                4
+            </div>
+             <div class="banner">
+                5
+            </div>
+             <div class="banner">
+                6
+            </div>
+        </div>
+         
+    </div>
+    </form>
+</body>
+</html>
